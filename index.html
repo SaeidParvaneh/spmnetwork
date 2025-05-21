@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAEID PARVANEH | سایت شخصی سعید پروانه</title>
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- فونت یکان (Yekan Bakh) از CDN فارسی‌فونت -->
+  <link href="https://cdn.fontcdn.ir/Fonts/YekanBakh/YekanBakh.css" rel="stylesheet">
+  <style>
+    body, * {
+      font-family: 'Yekan Bakh', 'Yekan', 'Tahoma', sans-serif;
+    }
+    /* اسلایدر ساده */
+    .slider-fade {
+      transition: opacity 0.8s;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-40">
+    <div class="container mx-auto px-4 py-6 flex flex-col items-center">
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-1">SAEID PARVANEH</h1>
+      <p class="text-lg md:text-xl text-gray-500 font-medium">توسعه‌دهنده وب و طراح بصری</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+
+    <!-- درباره من / رزومه کاری -->
+    <section class="mb-12 flex flex-col md:flex-row items-center gap-8">
+      <!-- جای عکس پروفایل -->
+      <div class="flex-shrink-0 w-36 h-36 rounded-full bg-gray-200 overflow-hidden shadow-md mb-6 md:mb-0">
+        <!-- جای عکس پروفایل -->
+        <!-- <img src="لینک-عکس-پروفایل-اینجا" alt="عکس پروفایل سعید پروانه" class="w-full h-full object-cover"> -->
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mb-3">درباره من</h2>
+        <p class="text-base leading-8">
+          من یک توسعه‌دهنده و طراح خلاق با مهارت‌های متنوع هستم. تخصص من در طراحی وب‌سایت و اپلیکیشن موبایل، توسعه نرم‌افزارهای حسابرسی برای شرکت‌ها و ارائه خدمات طراحی گرافیکی شامل کارت ویزیت، بنر، پوستر و تیزرهای تبلیغاتی می‌باشد. همچنین در ساخت محتوای ویدیویی جذاب برای شبکه‌های اجتماعی فعالیت دارم.
+        </p>
+      </div>
+    </section>
+
+    <!-- مهارت‌ها و خدمات -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">مهارت‌ها و خدمات</h2>
+      <ul class="list-disc pr-5 space-y-2 text-base">
+        <li>طراحی وب‌سایت و اپ موبایل</li>
+        <li>برنامه‌نویسی نرم‌افزار حسابرسی</li>
+        <li>طراحی گرافیک (کارت ویزیت، بنر، پوستر)</li>
+        <li>ساخت تیزر تبلیغاتی</li>
+        <li>تولید محتوای ویدیویی برای شبکه‌های اجتماعی</li>
+      </ul>
+    </section>
+
+    <!-- نمونه‌کارها -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">نمونه‌کارها</h2>
+      <div class="relative w-full max-w-xl mx-auto rounded-xl shadow overflow-hidden bg-white">
+        <!-- اسلایدر تصاویر نمونه‌کارها -->
+        <div id="portfolio-slider" class="w-full h-56 flex items-center justify-center bg-gray-100 slider-fade">
+          <!-- جای لینک تصویر نمونه‌کار ۱ -->
+          <img src="<!-- جای لینک تصویر -->" alt="نمونه‌کار ۱" id="slider-img" class="object-cover w-full h-full rounded-xl shadow-inner" style="display: none;">
+          <span id="slider-placeholder" class="text-gray-400">اینجا جای تصاویر نمونه‌کارهاست</span>
+        </div>
+        <!-- کنترل‌های اسلایدر -->
+        <button id="slider-prev" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow hover:bg-gray-100 transition" aria-label="قبلی">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5l-7 6 7 6"/></svg>
+        </button>
+        <button id="slider-next" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow hover:bg-gray-100 transition" aria-label="بعدی">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5l7 6-7 6"/></svg>
+        </button>
+      </div>
+      <p class="text-gray-500 mt-3 text-center">نمونه‌کارها در اینستاگرام نیز در دسترس هستند.</p>
+    </section>
+
+    <!-- راه‌های ارتباطی -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4">راه‌های ارتباطی</h2>
+      <div class="flex flex-wrap gap-5 items-center justify-start">
+        <!-- اینستاگرام -->
+        <a href="https://instagram.com/saeidparvaneh" target="_blank" rel="noopener" class="contact-btn group" aria-label="اینستاگرام">
+          <span class="sr-only">اینستاگرام</span>
+          <svg class="w-7 h-7 group-hover:scale-110 group-active:brightness-125 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="5" />
+            <circle cx="17.5" cy="6.5" r="1.5" />
+          </svg>
+        </a>
+        <!-- تلگرام -->
+        <a href="https://t.me/saeidparvaneh" target="_blank" rel="noopener" class="contact-btn group" aria-label="تلگرام">
+          <span class="sr-only">تلگرام</span>
+          <svg class="w-7 h-7 group-hover:scale-110 group-active:brightness-125 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polygon points="3,21 21,12 3,3 7,12 3,21" />
+          </svg>
+        </a>
+        <!-- گیت‌هاب -->
+        <a href="https://github.com/saeidparvaneh" target="_blank" rel="noopener" class="contact-btn group" aria-label="گیت‌هاب">
+          <span class="sr-only">گیت‌هاب</span>
+          <svg class="w-7 h-7 group-hover:scale-110 group-active:brightness-125 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 3C7.03 3 3 7.03 3 12c0 3.87 2.69 7.13 6.4 7.97.47.09.65-.2.65-.45v-1.6c-2.6.56-3.15-1.25-3.15-1.25-.43-1.1-1.06-1.4-1.06-1.4-.87-.6.07-.59.07-.59.96.07 1.47.99 1.47.99.85 1.46 2.24 1.04 2.79.8.09-.62.33-1.04.6-1.28-2.08-.23-4.27-1.04-4.27-4.63 0-1.02.36-1.86.97-2.52-.1-.24-.42-1.19.09-2.48 0 0 .79-.25 2.6.97a8.8 8.8 0 012.37-.32c.8.003 1.6.11 2.36.32 1.82-1.22 2.61-.97 2.61-.97.51 1.29.19 2.24.1 2.48.61.66.97 1.5.97 2.52 0 3.6-2.2 4.4-4.29 4.62.33.29.63.86.63 1.74v2.58c0 .25.18.55.66.45A9.001 9.001 0 0021 12c0-4.97-4.03-9-9-9z"/>
+          </svg>
+        </a>
+        <!-- ایمیل ها -->
+        <a href="mailto:saeidparvaneh@aol.com" class="contact-btn group" aria-label="ایمیل AOL">
+          <span class="sr-only">ایمیل AOL</span>
+          <svg class="w-7 h-7 group-hover:scale-110 group-active:brightness-125 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+        </a>
+        <a href="mailto:saeidparvaneh@gmail.com" class="contact-btn group" aria-label="ایمیل Gmail">
+          <span class="sr-only">ایمیل Gmail</span>
+          <svg class="w-7 h-7 group-hover:scale-110 group-active:brightness-125 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+        </a>
+        <!-- واتس‌اپ (در آینده تکمیل شود) -->
+        <a href="#" class="contact-btn group opacity-40 pointer-events-none" aria-label="واتس‌اپ (در آینده)">
+          <span class="sr-only">واتس‌اپ (در آینده)</span>
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M16 8.5a5.6 5.6 0 01-6 6 5.6 5.6 0 01-6-6"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- فوتر ساده -->
+  <footer class="bg-white text-center py-4 border-t text-sm text-gray-500">
+    © ۲۰۲۵ سعید پروانه | ارتباط: <a href="mailto:saeidparvaneh@gmail.com" class="underline hover:text-gray-700">saeidparvaneh@gmail.com</a>
+    <!-- لینک دانلود رزومه (اختیاری) -->
+    <!-- <a href="لینک-دانلود-رزومه.pdf" class="ml-4 underline hover:text-gray-700">دانلود رزومه</a> -->
+  </footer>
+
+  <!-- اسکریپت اسلایدر نمونه‌کارها -->
+  <script>
+    // تصاویر نمونه‌کارها را اینجا اضافه کنید
+    const portfolioImages = [
+      // 'لینک-تصویر-۱',
+      // 'لینک-تصویر-۲',
+      // 'لینک-تصویر-۳',
+      // ...
+      // برای هر تصویر:
+      // 'https://yourdomain.com/path/to/image1.jpg',
+      // 'https://yourdomain.com/path/to/image2.jpg',
+    ];
+    let sliderIndex = 0;
+    const sliderImg = document.getElementById('slider-img');
+    const sliderPlaceholder = document.getElementById('slider-placeholder');
+    const showImage = (idx) => {
+      if (portfolioImages.length > 0) {
+        sliderImg.src = portfolioImages[idx];
+        sliderImg.style.display = '';
+        sliderPlaceholder.style.display = 'none';
+      } else {
+        sliderImg.style.display = 'none';
+        sliderPlaceholder.style.display = '';
+      }
+    };
+    showImage(sliderIndex);
+
+    document.getElementById('slider-prev').onclick = function() {
+      if (portfolioImages.length === 0) return;
+      sliderIndex = (sliderIndex - 1 + portfolioImages.length) % portfolioImages.length;
+      showImage(sliderIndex);
+    };
+    document.getElementById('slider-next').onclick = function() {
+      if (portfolioImages.length === 0) return;
+      sliderIndex = (sliderIndex + 1) % portfolioImages.length;
+      showImage(sliderIndex);
+    };
+    // اسلاید خودکار هر ۴ ثانیه
+    setInterval(() => {
+      if (portfolioImages.length === 0) return;
+      sliderIndex = (sliderIndex + 1) % portfolioImages.length;
+      showImage(sliderIndex);
+    }, 4000);
+  </script>
+</body>
+</html>
