@@ -17,8 +17,17 @@
       box-shadow: 0 8px 32px 0 rgba(0,0,0,0.30);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      border-radius: 20px;
-      border: 1px solid rgba(44,62,80,0.32);
+      border-radius: 24px;
+      border: 1.5px solid rgba(44,62,80,0.22);
+      position: relative;
+      z-index: 1;
+    }
+    .glow {
+      box-shadow:
+        0 0 0 2.5px #00ffa3cc,
+        0 4px 32px 0 rgba(0,255,163,0.10),
+        0 1.5px 20px 0 #00ffa340;
+      border-radius: 24px;
     }
     .gradient-text {
       background: linear-gradient(90deg, #00FFA3 0%, #DC1FFF 100%);
@@ -48,13 +57,53 @@
       0% { opacity:0; transform: translateY(30px);}
       100%{ opacity:1; transform: translateY(0);}
     }
+    /* سایز استوری اینستاگرام: نسبت 9:16 */
+    .ig-story {
+      aspect-ratio: 9/16;
+      width: 100%;
+      max-width: 350px;
+      background: #232946;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .slider-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    /* Glow for slider */
+    .glow-ig {
+      box-shadow:
+        0 0 0 2.5px #dc1fffcc,
+        0 4px 32px 0 rgba(220,31,255,0.10),
+        0 1.5px 20px 0 #dc1fff40;
+      border-radius: 20px;
+    }
+    /* برای دکمه های اسلایدر */
+    .slider-btn {
+      background: rgba(35, 41, 70, 0.82);
+      border-radius: 50%;
+      border: 1.5px solid #00FFA3;
+      color: #00FFA3;
+    }
+    .slider-btn:hover {
+      background: #00FFA3;
+      color: #232946;
+      transform: scale(1.12);
+    }
   </style>
 </head>
 <body class="bg-gradient-to-tr from-[#181925] via-[#232946] to-[#1f2937] min-h-screen flex flex-col">
 
   <!-- Header -->
   <header class="container mx-auto px-4 pt-12 pb-7 flex flex-col items-center">
-    <div class="glass-dark w-full max-w-2xl py-6 px-6 flex flex-col items-center shadow-2xl animate-fade-in-down">
+    <div class="glass-dark glow w-full max-w-2xl py-6 px-6 flex flex-col items-center shadow-2xl animate-fade-in-down">
       <div class="w-32 h-32 rounded-full shadow-lg border-4 border-gray-700 bg-gray-800 overflow-hidden mb-5">
         <img src="https://avatars.githubusercontent.com/u/114426388?v=4" alt="عکس پروفایل سعید پروانه" class="w-full h-full object-cover">
       </div>
@@ -67,7 +116,7 @@
   <main class="container mx-auto px-4 flex flex-col gap-12 flex-grow">
 
     <!-- درباره من -->
-    <section class="glass-dark max-w-2xl mx-auto py-9 px-7 mt-3 shadow-lg animate-fade-in-up">
+    <section class="glass-dark glow max-w-2xl mx-auto py-9 px-7 mt-3 shadow-lg animate-fade-in-up">
       <h2 class="text-2xl font-bold text-[#00FFA3] mb-4">درباره من</h2>
       <p class="leading-8 text-gray-200 text-base">
         من یک توسعه‌دهنده و طراح خلاق با مهارت‌های متنوع هستم. تخصص من در طراحی وب‌سایت و اپلیکیشن موبایل، توسعه نرم‌افزارهای حسابرسی برای شرکت‌ها و ارائه خدمات طراحی گرافیکی شامل کارت ویزیت، بنر، پوستر و تیزرهای تبلیغاتی می‌باشد. همچنین در ساخت محتوای ویدیویی جذاب برای شبکه‌های اجتماعی فعالیت دارم.
@@ -75,7 +124,7 @@
     </section>
 
     <!-- مهارت‌ها و خدمات -->
-    <section class="glass-dark max-w-2xl mx-auto py-7 px-7 shadow-md animate-fade-in-up flex flex-col md:flex-row gap-7 items-center">
+    <section class="glass-dark glow max-w-2xl mx-auto py-7 px-7 shadow-md animate-fade-in-up flex flex-col md:flex-row gap-7 items-center">
       <div class="flex-1">
         <h2 class="text-2xl font-bold text-[#00FFA3] mb-3">مهارت‌ها و خدمات</h2>
         <ul class="list-disc pr-5 space-y-2 text-gray-100 text-base">
@@ -96,27 +145,29 @@
     </section>
 
     <!-- نمونه‌کارها -->
-    <section class="glass-dark max-w-2xl mx-auto py-8 px-7 shadow-md animate-fade-in-up">
+    <section class="glass-dark glow-ig max-w-2xl mx-auto py-8 px-7 shadow-md animate-fade-in-up">
       <h2 class="text-2xl font-bold text-[#00FFA3] mb-5">نمونه‌کارها</h2>
-      <div class="relative rounded-xl overflow-hidden shadow-lg bg-[#232946]">
-        <div id="portfolio-slider" class="w-full h-56 flex items-center justify-center slider-fade">
-          <!-- جای لینک تصویر نمونه‌کار ۱ -->
-          <img src="<!-- جای لینک تصویر -->" alt="نمونه‌کار ۱" id="slider-img" class="object-cover w-full h-full rounded-xl shadow-inner" style="display: none;">
-          <span id="slider-placeholder" class="text-gray-500 text-lg">اینجا جای تصاویر نمونه‌کارهاست</span>
-        </div>
+      <div class="relative ig-story mb-2">
+        <a id="slider-link" class="slider-link" href="#" target="_blank" rel="noopener">
+          <img src="" alt="نمونه‌کار" id="slider-img" class="object-cover w-full h-full" style="display:none;">
+        </a>
+        <span id="slider-placeholder" class="absolute top-1/2 right-0 left-0 text-gray-500 text-lg text-center -translate-y-1/2 pointer-events-none">
+          اینجا جای استوری‌های نمونه‌کار شماست
+        </span>
         <!-- کنترل‌های اسلایدر -->
-        <button id="slider-prev" class="absolute right-3 top-1/2 -translate-y-1/2 bg-[#232946]/80 rounded-full p-2 shadow hover:bg-[#00FFA3]/20 hover:scale-110 transition" aria-label="قبلی">
+        <button id="slider-prev" class="slider-btn absolute right-2 top-1/2 -translate-y-1/2 p-2 shadow transition" aria-label="قبلی">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5l-7 6 7 6"/></svg>
         </button>
-        <button id="slider-next" class="absolute left-3 top-1/2 -translate-y-1/2 bg-[#232946]/80 rounded-full p-2 shadow hover:bg-[#00FFA3]/20 hover:scale-110 transition" aria-label="بعدی">
+        <button id="slider-next" class="slider-btn absolute left-2 top-1/2 -translate-y-1/2 p-2 shadow transition" aria-label="بعدی">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5l7 6-7 6"/></svg>
         </button>
       </div>
-      <p class="text-gray-400 mt-3 text-center text-sm">نمونه‌کارها در اینستاگرام نیز در دسترس هستند.</p>
+      <div id="slider-dots" class="flex justify-center gap-2 mt-2"></div>
+      <p class="text-gray-400 mt-3 text-center text-sm">برای مشاهده هر استوری روی دکمه‌ها کلیک یا منتظر ورق‌خوردن خودکار باشید.</p>
     </section>
 
     <!-- راه‌های ارتباطی -->
-    <section class="glass-dark max-w-2xl mx-auto py-8 px-7 shadow-md animate-fade-in-up">
+    <section class="glass-dark glow max-w-2xl mx-auto py-8 px-7 shadow-md animate-fade-in-up">
       <h2 class="text-2xl font-bold text-[#00FFA3] mb-4">راه‌های ارتباطی</h2>
       <div class="flex flex-wrap gap-6 items-center justify-center mt-1">
         <!-- اینستاگرام -->
@@ -166,48 +217,86 @@
   <!-- فوتر -->
   <footer class="mt-20 mb-7 text-center text-gray-400 text-sm">
     © ۲۰۲۵ سعید پروانه | <a href="mailto:saeidparvaneh@gmail.com" class="underline hover:text-[#00FFA3]">saeidparvaneh@gmail.com</a>
-    <!-- <a href="لینک-دانلود-رزومه.pdf" class="ml-4 underline hover:text-[#00FFA3]">دانلود رزومه</a> -->
   </footer>
 
   <!-- اسکریپت اسلایدر نمونه‌کارها -->
   <script>
-    // تصاویر نمونه‌کارها را اینجا اضافه کنید
+    // لیست نمونه‌کارها (ده عدد، دو تا با مقدار)
     const portfolioImages = [
-      // 'لینک-تصویر-۱',
-      // 'لینک-تصویر-۲',
-      // 'لینک-تصویر-۳',
-      // ...
+      {
+        link: "https://www.instagram.com/reel/DCCCkx-M1nq/?igsh=MXJudGc2bWt2eTc5Ng==",
+        image: "https://s16.picofile.com/file/8441196468/insta_story_1.jpg", // لینک عکس کاور استوری (باید خودت جایگزین کنی)
+        alt: "نمونه‌کار ۱"
+      },
+      {
+        link: "https://www.instagram.com/reel/DB8NLtqsFQm/?igsh=bmthc2FqbW5kN2Ru",
+        image: "https://s16.picofile.com/file/8441196484/insta_story_2.jpg", // لینک عکس کاور استوری (باید خودت جایگزین کنی)
+        alt: "نمونه‌کار ۲"
+      },
+      // نمونه‌کارهای ۳ تا ۱۰ را اینجا اضافه کن
+      { link: "#", image: "", alt: "نمونه‌کار ۳" },
+      { link: "#", image: "", alt: "نمونه‌کار ۴" },
+      { link: "#", image: "", alt: "نمونه‌کار ۵" },
+      { link: "#", image: "", alt: "نمونه‌کار ۶" },
+      { link: "#", image: "", alt: "نمونه‌کار ۷" },
+      { link: "#", image: "", alt: "نمونه‌کار ۸" },
+      { link: "#", image: "", alt: "نمونه‌کار ۹" },
+      { link: "#", image: "", alt: "نمونه‌کار ۱۰" },
     ];
     let sliderIndex = 0;
     const sliderImg = document.getElementById('slider-img');
+    const sliderLink = document.getElementById('slider-link');
     const sliderPlaceholder = document.getElementById('slider-placeholder');
-    const showImage = (idx) => {
-      if (portfolioImages.length > 0) {
-        sliderImg.src = portfolioImages[idx];
+    const sliderDots = document.getElementById('slider-dots');
+
+    function showImage(idx) {
+      let item = portfolioImages[idx];
+      if (item && item.image) {
+        sliderImg.src = item.image;
+        sliderImg.alt = item.alt || "";
         sliderImg.style.display = '';
+        sliderLink.href = item.link || "#";
         sliderPlaceholder.style.display = 'none';
       } else {
         sliderImg.style.display = 'none';
+        sliderLink.href = "#";
         sliderPlaceholder.style.display = '';
       }
-    };
-    showImage(sliderIndex);
+      // Dots
+      sliderDots.innerHTML = '';
+      portfolioImages.forEach((_, i) => {
+        let dot = document.createElement('span');
+        dot.className = 'inline-block w-3 h-3 rounded-full mx-0.5 transition ' + (i === idx ? 'bg-[#00FFA3]' : 'bg-gray-700');
+        dot.style.cursor = "pointer";
+        dot.onclick = () => { sliderIndex = i; showImage(sliderIndex); resetAutoPlay(); };
+        sliderDots.appendChild(dot);
+      });
+    }
 
     document.getElementById('slider-prev').onclick = function() {
-      if (portfolioImages.length === 0) return;
-      sliderIndex = (sliderIndex - 1 + portfolioImages.length) % portfolioImages.length;
-      showImage(sliderIndex);
+      let n = portfolioImages.length;
+      do { sliderIndex = (sliderIndex - 1 + n) % n } while(!portfolioImages[sliderIndex].image && sliderIndex !== 0);
+      showImage(sliderIndex); resetAutoPlay();
     };
     document.getElementById('slider-next').onclick = function() {
-      if (portfolioImages.length === 0) return;
-      sliderIndex = (sliderIndex + 1) % portfolioImages.length;
-      showImage(sliderIndex);
+      let n = portfolioImages.length;
+      do { sliderIndex = (sliderIndex + 1) % n } while(!portfolioImages[sliderIndex].image && sliderIndex !== 0);
+      showImage(sliderIndex); resetAutoPlay();
     };
-    setInterval(() => {
-      if (portfolioImages.length === 0) return;
-      sliderIndex = (sliderIndex + 1) % portfolioImages.length;
-      showImage(sliderIndex);
-    }, 4000);
+
+    // Auto slider
+    let autoPlayInterval = null;
+    function resetAutoPlay() {
+      if(autoPlayInterval) clearInterval(autoPlayInterval);
+      autoPlayInterval = setInterval(() => {
+        let n = portfolioImages.length, next = sliderIndex;
+        do { next = (next + 1) % n } while(!portfolioImages[next].image && next !== sliderIndex);
+        sliderIndex = next;
+        showImage(sliderIndex);
+      }, 3900);
+    }
+    showImage(sliderIndex);
+    resetAutoPlay();
   </script>
 </body>
 </html>
