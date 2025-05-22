@@ -11,6 +11,20 @@
   <link href="https://cdn.fontcdn.ir/Fonts/YekanBakh/YekanBakh.css" rel="stylesheet">
   <style>
     body, * {font-family: 'Yekan Bakh', 'Yekan', 'Tahoma', sans-serif;}
+    body {
+      min-height: 100vh;
+      /* پس‌زمینه گرادینت شبیه تصویر ارسالی */
+      background: radial-gradient(ellipse at 80% 80%, #ff6cae 0%, #b35fff 35%, #4d39e7 60%, #2f2ef0 100%);
+      background: radial-gradient(ellipse at 80% 80%, #fc8bbd 0%, #b35fff 35%, #4d39e7 60%, #2f2ef0 100%);
+      background: linear-gradient(120deg, #2f2ef0 0%, #4d39e7 30%, #b35fff 70%, #fc8bbd 100%);
+      background-attachment: fixed;
+      /* حالت ترکیبی با گرادینت‌های مختلف برای شباهت بیشتر */
+      background: radial-gradient(ellipse 110% 80% at 85% 80%, #ff6cae 0%, #b35fff 50%, #2f2ef0 100%),
+                  radial-gradient(ellipse 90% 70% at 30% 30%, #4d39e7 0%, #2f2ef0 80%, transparent 100%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
     .glass-dark {
       background: rgba(30, 35, 46, 0.68);
       box-shadow: 0 8px 32px 0 rgba(0,0,0,0.30);
@@ -96,13 +110,13 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-tr from-[#181925] via-[#232946] to-[#1f2937] min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col">
 
   <!-- Header -->
   <header class="container mx-auto px-4 pt-12 pb-7 flex flex-col items-center">
     <div class="glass-dark glow w-full max-w-2xl py-6 px-6 flex flex-col items-center shadow-2xl animate-fade-in-down">
       <div class="w-32 h-32 rounded-full shadow-lg border-4 border-gray-700 bg-gray-800 overflow-hidden mb-5 flex items-center justify-center">
-       <img src="https://avatars.githubusercontent.com/u/93242663?s=400&u=7eb858f35827a7e0db8ce9cc24d8e164e0b74284&v=4" alt="Profile Picture" id="profile-pic">
+        <img src="image1" alt="https://avatars.githubusercontent.com/u/93242663?s=400&u=7eb858f35827a7e0db8ce9cc24d8e164e0b74284&v=4" class="w-full h-full object-cover">
       </div>
       <h1 class="text-4xl font-extrabold gradient-text mb-1 tracking-tight">SAEID PARVANEH</h1>
       <span class="text-lg text-gray-300 mt-1 font-bold">توسعه‌دهنده وب و طراح بصری</span>
